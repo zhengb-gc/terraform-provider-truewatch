@@ -13,7 +13,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/api"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/api"
 )
 
 //go:embed README.md
@@ -21,48 +21,48 @@ var doc string
 
 // Ensure the implementation satisfies the expected interfaces
 var (
-	_ provider.Provider = &guanceProvider{}
+	_ provider.Provider = &truewatchProvider{}
 )
 
 // New is a helper function to simplify provider server and testing implementation.
 func New() provider.Provider {
-	return &guanceProvider{}
+	return &truewatchProvider{}
 }
 
-// guanceProvider is the provider implementation.
-type guanceProvider struct{}
+// truewatchProvider is the provider implementation.
+type truewatchProvider struct{}
 
-// guanceProviderModel maps provider schema data to a Go type.
-type guanceProviderModel struct {
+// truewatchProviderModel maps provider schema data to a Go type.
+type truewatchProviderModel struct {
 	AccessToken types.String `tfsdk:"access_token"`
 	EndPoint    types.String `tfsdk:"end_point"`
 	Region      types.String `tfsdk:"region"`
 }
 
 // Metadata returns the provider type name.
-func (p *guanceProvider) Metadata(_ context.Context, _ provider.MetadataRequest, resp *provider.MetadataResponse) {
-	resp.TypeName = "guance"
+func (p *truewatchProvider) Metadata(_ context.Context, _ provider.MetadataRequest, resp *provider.MetadataResponse) {
+	resp.TypeName = "truewatch"
 }
 
 // Schema defines the provider-level schema for configuration data.
-func (p *guanceProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
+func (p *truewatchProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
 	resp.Schema = schema.Schema{
-		Description:         "Interact with Guance Cloud.",
+		Description:         "Interact with TrueWatch Cloud.",
 		MarkdownDescription: doc,
 		Attributes: map[string]schema.Attribute{
 			"region": schema.StringAttribute{
-				Description:         "Region for Guance Cloud API. May also be provided via GUANCE_REGION environment variable. See https://github.com/GuanceCloud/terraform-provider-guance for a list of available regions.",
-				MarkdownDescription: "Region for Guance Cloud API. May also be provided via GUANCE_REGION environment variable. See [GitHub](https://github.com/GuanceCloud/terraform-provider-guance) for a list of available regions.",
+				Description:         "Region for TrueWatch Cloud API. May also be provided via TRUEWATCH_REGION environment variable. See https://github.com/TrueWatchTech/terraform-provider-truewatch for a list of available regions.",
+				MarkdownDescription: "Region for TrueWatch Cloud API. May also be provided via TRUEWATCH_REGION environment variable. See [GitHub](https://github.com/TrueWatchTech/terraform-provider-truewatch) for a list of available regions.",
 				Optional:            true,
 			},
 			"end_point": schema.StringAttribute{
-				Description:         "EndPoint for Guance Cloud API. May also be provided via GUANCE_END_POINT environment variable. See https://github.com/GuanceCloud/terraform-provider-guance for a list of available regions.",
-				MarkdownDescription: "EndPoint for Guance Cloud API. May also be provided via GUANCE_END_POINT environment variable. See [GitHub](https://github.com/GuanceCloud/terraform-provider-guance) for a list of available regions.",
+				Description:         "EndPoint for TrueWatch Cloud API. May also be provided via TRUEWATCH_END_POINT environment variable. See https://github.com/TrueWatchTech/terraform-provider-truewatch for a list of available regions.",
+				MarkdownDescription: "EndPoint for TrueWatch Cloud API. May also be provided via TRUEWATCH_END_POINT environment variable. See [GitHub](https://github.com/TrueWatchTech/terraform-provider-truewatch) for a list of available regions.",
 				Optional:            true,
 			},
 			"access_token": schema.StringAttribute{
-				Description:         "Access token for Guance Cloud API. May also be provided via GUANCE_ACCESS_TOKEN environment variable. Get an Key ID from https://console.guance.com/workspace/apiManage as access token.",
-				MarkdownDescription: "Access token for Guance Cloud API. May also be provided via GUANCE_ACCESS_TOKEN environment variable. Get an Key ID from [Guance Cloud](https://console.guance.com/workspace/apiManage) as access token.",
+				Description:         "Access token for TrueWatch Cloud API. May also be provided via TRUEWATCH_ACCESS_TOKEN environment variable. Get an Key ID from https://console.truewatch.com/workspace/apiManage as access token.",
+				MarkdownDescription: "Access token for TrueWatch Cloud API. May also be provided via TRUEWATCH_ACCESS_TOKEN environment variable. Get an Key ID from [TrueWatch Cloud](https://console.truewatch.com/workspace/apiManage) as access token.",
 				Optional:            true,
 				Sensitive:           true,
 			},
@@ -70,10 +70,10 @@ func (p *guanceProvider) Schema(_ context.Context, _ provider.SchemaRequest, res
 	}
 }
 
-// Configure prepares a Guance Cloud API client for data sources and resources.
-func (p *guanceProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
+// Configure prepares a TrueWatch Cloud API client for data sources and resources.
+func (p *truewatchProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
 	// Retrieve provider data from configuration
-	var config guanceProviderModel
+	var config truewatchProviderModel
 	diags := req.Config.Get(ctx, &config)
 	resp.Diagnostics.Append(diags...)
 	if resp.Diagnostics.HasError() {
@@ -88,26 +88,26 @@ func (p *guanceProvider) Configure(ctx context.Context, req provider.ConfigureRe
 	region := getConfigField("region", config.Region, true, resp)
 	endPoint := getConfigField("end_point", config.EndPoint, true, resp)
 
-	ctx = tflog.SetField(ctx, "guance_region", region)
-	ctx = tflog.SetField(ctx, "guance_end_point", endPoint)
-	ctx = tflog.SetField(ctx, "guance_access_token", accessToken)
-	ctx = tflog.MaskFieldValuesWithFieldKeys(ctx, "guance_access_token")
+	ctx = tflog.SetField(ctx, "truewatch_region", region)
+	ctx = tflog.SetField(ctx, "truewatch_end_point", endPoint)
+	ctx = tflog.SetField(ctx, "truewatch_access_token", accessToken)
+	ctx = tflog.MaskFieldValuesWithFieldKeys(ctx, "truewatch_access_token")
 
-	tflog.Debug(ctx, "Creating Guance Cloud client")
+	tflog.Debug(ctx, "Creating TrueWatch Cloud client")
 
-	// Create a new Guance Cloud client using the configuration values
+	// Create a new TrueWatch Cloud client using the configuration values
 	client, err := api.NewClient(region, accessToken, endPoint)
 	if err != nil {
 		resp.Diagnostics.AddError(
-			"Unable to Create Guance Cloud API Client",
-			"An unexpected error occurred when creating the Guance Cloud API client. "+
+			"Unable to Create TrueWatch Cloud API Client",
+			"An unexpected error occurred when creating the TrueWatch Cloud API client. "+
 				"If the error is not clear, please contact the provider developers.\n\n"+
-				"Guance Cloud Client Error: "+err.Error(),
+				"TrueWatch Cloud Client Error: "+err.Error(),
 		)
 		return
 	}
 
-	// Make the Guance Cloud client available during DataSource and Resource
+	// Make the TrueWatch Cloud client available during DataSource and Resource
 	// type Configure methods.
 	resp.DataSourceData = client
 	resp.ResourceData = client
@@ -117,13 +117,13 @@ func getConfigField(name string, value types.String, allowEmpty bool, resp *prov
 	// If practitioner provided a configuration value for any of the
 	// attributes, it must be a known value.
 
-	envName := fmt.Sprintf("GUANCE_%s", strings.ToUpper(name))
+	envName := fmt.Sprintf("TRUEWATCH_%s", strings.ToUpper(name))
 
 	if value.IsUnknown() {
 		resp.Diagnostics.AddAttributeError(
 			path.Root(name),
-			fmt.Sprintf("Unknown Guance Cloud API %s", strings.ToTitle(name)),
-			"The provider cannot create the Guance Cloud API client as there is an unknown configuration value for the Guance Cloud API endpoint. "+
+			fmt.Sprintf("Unknown TrueWatch Cloud API %s", strings.ToTitle(name)),
+			"The provider cannot create the TrueWatch Cloud API client as there is an unknown configuration value for the TrueWatch Cloud API endpoint. "+
 				"Either target apply the source of the value first, set the value statically in the configuration, or use the "+envName+" environment variable.",
 		)
 	}
@@ -146,8 +146,8 @@ func getConfigField(name string, value types.String, allowEmpty bool, resp *prov
 	if !allowEmpty && valueString == "" {
 		resp.Diagnostics.AddAttributeError(
 			path.Root(name),
-			fmt.Sprintf("Missing Guance Cloud API %s", strings.ToTitle(name)),
-			"The provider cannot create the Guance Cloud API client as there is a missing or empty value for the Guance Cloud API "+name+". "+
+			fmt.Sprintf("Missing TrueWatch Cloud API %s", strings.ToTitle(name)),
+			"The provider cannot create the TrueWatch Cloud API client as there is a missing or empty value for the TrueWatch Cloud API "+name+". "+
 				"Set the host value in the configuration or use the "+envName+" environment variable. "+
 				"If either is already set, ensure the value is not empty.",
 		)

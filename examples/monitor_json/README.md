@@ -1,15 +1,15 @@
 # Monitor Json Example
 
-This example demonstrates how to use `guance_monitor_json` resource to import and manage monitors in Guance Cloud using JSON configuration.
+This example demonstrates how to use `truewatch_monitor_json` resource to import and manage monitors in TrueWatch Cloud using JSON configuration.
 
 ## Requirements
 
 - Terraform 1.0+
-- Guance Cloud API key
+- TrueWatch Cloud API key
 
 ## Usage
 
-1. Configure your Guance Cloud API key in the `provider.tf` file.
+1. Configure your TrueWatch Cloud API key in the `provider.tf` file.
 2. Modify the `main.tf` or `main_from_file.tf` file to customize your monitor configuration.
 3. Run `terraform init` to initialize the provider.
 4. Run `terraform plan` to preview the changes.
@@ -21,7 +21,7 @@ This example demonstrates how to use `guance_monitor_json` resource to import an
 ### Using jsonencode
 
 ```hcl
-resource "guance_monitor_json" "example" {
+resource "truewatch_monitor_json" "example" {
   checker_json = jsonencode({
     extend = {
       funcName = ""
@@ -115,7 +115,7 @@ resource "guance_monitor_json" "example" {
 ### Using file
 
 ```hcl
-resource "guance_monitor_json" "example_from_file" {
+resource "truewatch_monitor_json" "example_from_file" {
   checker_json = file("monitor.json")
   
   type = "trigger"
@@ -126,7 +126,7 @@ resource "guance_monitor_json" "example_from_file" {
 
 - The `checker_json` field accepts a single JSON object of monitor configuration (not an array).
 - When updating the resource, the Replace API is used to update the existing monitor.
-- The import operation uses the Guance Cloud checker import API endpoints.
-- You can export monitors from Guance Cloud and use the exported JSON as the `checker_json` input.
+- The import operation uses the TrueWatch Cloud checker import API endpoints.
+- You can export monitors from TrueWatch Cloud and use the exported JSON as the `checker_json` input.
 - The `type` field supports two values: `trigger` (normal monitor) and `smartMonitor` (smart monitor).
 

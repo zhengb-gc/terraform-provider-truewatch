@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/provider"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/provider"
 )
 
 func TestAccIntelligentinspection(t *testing.T) {
@@ -15,7 +15,7 @@ func TestAccIntelligentinspection(t *testing.T) {
 			// Create and Read testing
 			{
 				Config: provider.Config + `
-resource "guance_intelligentinspection" "demo" {
+resource "truewatch_intelligentinspection" "demo" {
 	name        = "oac-demo"
 }
 `,
@@ -25,7 +25,7 @@ resource "guance_intelligentinspection" "demo" {
 			// Create and Read testing
 			{
 				Config: provider.Config + `
-resource "guance_intelligentinspection" "demo" {
+resource "truewatch_intelligentinspection" "demo" {
   name = "oac-demo-complete"
 }
 `,

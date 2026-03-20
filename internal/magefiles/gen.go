@@ -16,7 +16,7 @@ func (ns Gen) Doc() error {
 		"go", "run",
 		"github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs",
 		"generate",
-		"--provider-name", "guance",
+		"--provider-name", "truewatch",
 		"--examples-dir", "examples",
 	)
 }

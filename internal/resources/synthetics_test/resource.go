@@ -13,8 +13,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 
 	"github.com/GuanceCloud/cliutils/dialtesting"
-	"github.com/GuanceCloud/terraform-provider-guance/internal/api"
-	"github.com/GuanceCloud/terraform-provider-guance/internal/consts"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/api"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/consts"
 )
 
 // Ensure the implementation satisfies the expected interfaces.

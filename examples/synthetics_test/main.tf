@@ -6,7 +6,7 @@ variable "regions" {
 }
 
 # HTTP
-resource "guance_synthetics_test" "http_test" {
+resource "truewatch_synthetics_test" "http_test" {
   type    = "http"
   regions = var.regions
   tags    = ["http", "production"]
@@ -66,7 +66,7 @@ resource "guance_synthetics_test" "http_test" {
 }
 
 # TCP
-resource "guance_synthetics_test" "tcp_test" {
+resource "truewatch_synthetics_test" "tcp_test" {
   type    = "tcp"
   regions = var.regions
   tags    = ["tcp", "production"]
@@ -105,7 +105,7 @@ resource "guance_synthetics_test" "tcp_test" {
 }
 
 # WebSocket
-resource "guance_synthetics_test" "websocket_test" {
+resource "truewatch_synthetics_test" "websocket_test" {
   type    = "websocket"
   regions = var.regions
   tags    = ["websocket", "production"]
@@ -162,7 +162,7 @@ resource "guance_synthetics_test" "websocket_test" {
 }
 
 # ICMP
-resource "guance_synthetics_test" "icmp_test" {
+resource "truewatch_synthetics_test" "icmp_test" {
   type    = "icmp"
   regions = var.regions
   tags    = ["icmp", "production"]
@@ -207,7 +207,7 @@ resource "guance_synthetics_test" "icmp_test" {
 }
 
 # Multi-step
-resource "guance_synthetics_test" "multi_step_test" {
+resource "truewatch_synthetics_test" "multi_step_test" {
   type    = "multi"
   regions = var.regions
   tags    = ["multi", "production"]

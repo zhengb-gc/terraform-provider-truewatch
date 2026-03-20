@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/provider"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/provider"
 )
 
 func TestAccPipeline(t *testing.T) {
@@ -15,7 +15,7 @@ func TestAccPipeline(t *testing.T) {
 			// Create and Read testing
 			{
 				Config: provider.Config + `
-resource "guance_pipeline" "demo" {
+resource "truewatch_pipeline" "demo" {
   name     = "oac-demo"
   category = "logging"
   source   = [

@@ -1,4 +1,4 @@
-module github.com/GuanceCloud/terraform-provider-guance
+module github.com/TrueWatchTech/terraform-provider-truewatch
 
 go 1.25.0
 

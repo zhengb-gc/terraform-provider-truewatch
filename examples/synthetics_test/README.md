@@ -1,16 +1,16 @@
 # Synthetics Test Example
 
-This example demonstrates how to use the `guance_synthetics_test` resource to create and manage synthetics tests in Guance Cloud. Synthetics tests are proactive monitoring tasks that regularly test targets (such as websites, APIs, TCP services, etc.) from multiple regions around the world to detect their availability and performance.
+This example demonstrates how to use the `truewatch_synthetics_test` resource to create and manage synthetics tests in TrueWatch Cloud. Synthetics tests are proactive monitoring tasks that regularly test targets (such as websites, APIs, TCP services, etc.) from multiple regions around the world to detect their availability and performance.
 
 ## Requirements
 
 - Terraform 1.0+
-- Guance Cloud API key
+- TrueWatch Cloud API key
 
 ## Usage
 
-1. Configure your Guance Cloud API key in the `provider.tf` file or set the `GUANCE_ACCESS_TOKEN` environment variable.
-2. Configure your region in the `provider.tf` file or set the `GUANCE_REGION` environment variable.
+1. Configure your TrueWatch Cloud API key in the `provider.tf` file or set the `TRUEWATCH_ACCESS_TOKEN` environment variable.
+2. Configure your region in the `provider.tf` file or set the `TRUEWATCH_REGION` environment variable.
 3. Modify the `main.tf` file to customize your synthetics test configurations.
 4. Run `terraform init` to initialize the provider.
 5. Run `terraform plan` to preview the changes.
@@ -22,7 +22,7 @@ This example demonstrates how to use the `guance_synthetics_test` resource to cr
 ### HTTP Test
 
 ```hcl
-resource "guance_synthetics_test" "http_test" {
+resource "truewatch_synthetics_test" "http_test" {
   type    = "http"
   regions = ["hangzhou", "shanghai"]
   tags    = ["http", "production"]
@@ -57,7 +57,7 @@ resource "guance_synthetics_test" "http_test" {
 ### TCP Test
 
 ```hcl
-resource "guance_synthetics_test" "tcp_test" {
+resource "truewatch_synthetics_test" "tcp_test" {
   type    = "tcp"
   regions = ["hangzhou", "shanghai"]
   tags    = ["tcp", "production"]
@@ -81,7 +81,7 @@ resource "guance_synthetics_test" "tcp_test" {
 ### WebSocket Test
 
 ```hcl
-resource "guance_synthetics_test" "websocket_test" {
+resource "truewatch_synthetics_test" "websocket_test" {
   type    = "websocket"
   regions = ["hangzhou", "shanghai"]
   tags    = ["websocket", "production"]
@@ -103,7 +103,7 @@ resource "guance_synthetics_test" "websocket_test" {
 ### ICMP Test
 
 ```hcl
-resource "guance_synthetics_test" "icmp_test" {
+resource "truewatch_synthetics_test" "icmp_test" {
   type    = "icmp"
   regions = ["hangzhou", "shanghai"]
   tags    = ["icmp", "production"]
@@ -135,7 +135,7 @@ resource "guance_synthetics_test" "icmp_test" {
 
 ## Notes
 
-- The `regions` field specifies the regions where the test will be executed. You can find the list of available regions in the Guance Cloud documentation.
+- The `regions` field specifies the regions where the test will be executed. You can find the list of available regions in the TrueWatch Cloud documentation.
 - The `frequency` field specifies how often the test will be executed. Valid values are: `1m`, `5m`, `15m`, `30m`, `1h`, `6h`, `12h`, `24h`.
 - The `success_when_logic` field specifies the logical relationship between success conditions. Valid values are: `and`, `or`.
 - The `advance_options` field allows you to configure advanced settings such as request headers, authentication, and proxy settings.

@@ -14,19 +14,16 @@ import (
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 )
 
-const DefaultEndPoint = "https://openapi.guance.com"
+const DefaultEndPoint = "https://us1-openapi.truewatch.com"
 
 var Error404 = errors.New("resource_not_found")
 
 var EndPoints = map[string]string{
-	"hangzhou":  "https://openapi.guance.com",
-	"ningxia":   "https://aws-openapi.guance.com",
-	"guangzhou": "https://cn4-openapi.guance.com",
-	"vnet":      "https://cn5-openapi.guance.com",
-	"hongkong":  "https://cn6-openapi.guance.one",
-	"oregon":    "https://us1-openapi.guance.com",
-	"frankfurt": "https://eu1-openapi.guance.one",
-	"singapore": "https://ap1-openapi.guance.one",
+	"oregon":      "https://us1-openapi.truewatch.com",
+	"frankfurt":   "https://eu1-openapi.truewatch.com",
+	"singapore":   "https://ap1-openapi.truewatch.com",
+	"southafrica": "https://za1-openapi.truewatch.com",
+	"jakarta":     "https://id1-openapi.truewatch.com",
 }
 
 const (

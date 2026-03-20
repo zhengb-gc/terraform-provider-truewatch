@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/provider"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/provider"
 )
 
 func TestAccBlacklist(t *testing.T) {
@@ -15,7 +15,7 @@ func TestAccBlacklist(t *testing.T) {
 			// Create and Read testing
 			{
 				Config: provider.Config + `
-resource "guance_blacklist" "demo" {
+resource "truewatch_blacklist" "demo" {
   name = "test-blacklist"
   type = "logging"
   desc = "Test blacklist"
@@ -32,10 +32,10 @@ resource "guance_blacklist" "demo" {
 }
 `,
 				Check: resource.ComposeAggregateTestCheckFunc(
-					resource.TestCheckResourceAttr("guance_blacklist.demo", "name", "test-blacklist"),
-					resource.TestCheckResourceAttr("guance_blacklist.demo", "type", "logging"),
-					resource.TestCheckResourceAttr("guance_blacklist.demo", "desc", "Test blacklist"),
-					resource.TestCheckResourceAttr("guance_blacklist.demo", "source", "nginx"),
+					resource.TestCheckResourceAttr("truewatch_blacklist.demo", "name", "test-blacklist"),
+					resource.TestCheckResourceAttr("truewatch_blacklist.demo", "type", "logging"),
+					resource.TestCheckResourceAttr("truewatch_blacklist.demo", "desc", "Test blacklist"),
+					resource.TestCheckResourceAttr("truewatch_blacklist.demo", "source", "nginx"),
 				),
 			},
 

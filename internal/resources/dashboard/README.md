@@ -1,11 +1,11 @@
 # Dashboard Resource
 
-The `guance_dashboard` resource manages dashboards in Guance Cloud. Dashboards are visualizations that display metrics, logs, traces, and other observability data from your systems.
+The `truewatch_dashboard` resource manages dashboards in TrueWatch Cloud. Dashboards are visualizations that display metrics, logs, traces, and other observability data from your systems.
 
 ## Example Usage
 
 ```hcl
-resource "guance_dashboard" "example" {
+resource "truewatch_dashboard" "example" {
   name     = "example-dashboard"
   desc     = "An example dashboard created with Terraform"
   is_public = 0

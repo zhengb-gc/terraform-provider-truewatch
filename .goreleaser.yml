@@ -3,7 +3,7 @@
 
 version: 2
 
-project_name: terraform-provider-guance
+project_name: terraform-provider-truewatch
 before:
   hooks:
     # this is just an example and not a requirement for provider building/publishing

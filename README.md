@@ -1,12 +1,12 @@
-# Terraform Provider: Guance
+# Terraform Provider: TrueWatch
 
-The Guance Provider provides resources to manage [Guance Cloud](https://en.guance.com/) resources.
+The TrueWatch Provider provides resources to manage [TrueWatch Cloud](https://en.truewatch.com/) resources.
 
 ![cover](./cover.png)
 
 ## Documentation, questions, and discussions
 
-Official documentation on how to use this provider can be found on the [Terraform Registry](https://registry.terraform.io/providers/GuanceCloud/guance/latest/docs).
+Official documentation on how to use this provider can be found on the [Terraform Registry](https://registry.terraform.io/providers/TrueWatchTech/truewatch/latest/docs).
 
 The remainder of this document will focus on the development aspects of the provider.
 
@@ -33,20 +33,20 @@ The region supports as follows:
 * [x] frankfurt
 * [x] singapore
 
-If there are more resources you need, create an [issue](https://github.com/GuanceCloud/terraform-provider-guance/issues) for free.
+If there are more resources you need, create an [issue](https://github.com/TrueWatchTech/terraform-provider-truewatch/issues) for free.
 
 ## Compatibility
 
 Compatibility table between this provider, the [Terraform Plugin Protocol](https://www.terraform.io/plugin/how-terraform-works#terraform-plugin-protocol)
 version it implements, and Terraform:
 
-| Guance Provider | Terraform Plugin Protocol | Terraform |
+| TrueWatch Provider | Terraform Plugin Protocol | Terraform |
 |:---------------:|:-------------------------:|:---------:|
 |    `>= 0.x`     |            `6`            | `>= 1.0`  |
 
 Details can be found by querying the [Registry API](https://www.terraform.io/internals/provider-registry-protocol#list-available-versions)
 that return all the details about which versions are currently available for a particular provider.
-[Here](https://registry.terraform.io/v1/providers/GuanceCloud/guance/versions) are the details.
+[Here](https://registry.terraform.io/v1/providers/TrueWatchTech/truewatch/versions) are the details.
 
 ## Requirements
 

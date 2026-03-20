@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/GuanceCloud/terraform-provider-guance/internal/consts"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/consts"
 )
 
 // Dashboard represents the dashboard structure for API requests
@@ -42,7 +42,7 @@ func init() {
 		ResourceDelete: "/dashboards/%s/delete",
 		ResourceRead:   "/dashboards/%s/get",
 		ResourceUpdate: "/dashboards/%s/modify",
-		"export":      "/dashboards/%s/export",
-		"import":      "/dashboards/%s/import",
+		"export":       "/dashboards/%s/export",
+		"import":       "/dashboards/%s/import",
 	}
 }

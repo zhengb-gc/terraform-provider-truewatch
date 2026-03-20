@@ -1,6 +1,6 @@
 package api
 
-import "github.com/GuanceCloud/terraform-provider-guance/internal/consts"
+import "github.com/TrueWatchTech/terraform-provider-truewatch/internal/consts"
 
 type Membergroup struct {
 	UUID         string   `json:"uuid,omitempty"`

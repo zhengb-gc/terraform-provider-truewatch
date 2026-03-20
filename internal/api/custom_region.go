@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/GuanceCloud/terraform-provider-guance/internal/consts"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/consts"
 )
 
 func init() {

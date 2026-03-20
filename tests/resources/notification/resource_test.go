@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/provider"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/provider"
 )
 
 func TestAccNotification(t *testing.T) {
@@ -23,7 +23,7 @@ variable "ding_talk_secret" {
   type = string
 }
 
-resource "guance_notification" "demo" {
+resource "truewatch_notification" "demo" {
   name            = "oac-demo"
   type            = "ding_talk_robot"
   ding_talk_robot = {

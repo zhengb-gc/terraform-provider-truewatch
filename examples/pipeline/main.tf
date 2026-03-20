@@ -1,4 +1,4 @@
-resource "guance_pipeline" "demo" {
+resource "truewatch_pipeline" "demo" {
   name     = "oac-demo"
   category = "logging"
   source = [

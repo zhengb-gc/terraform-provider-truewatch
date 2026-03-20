@@ -1,8 +1,8 @@
-# Guance Custom Region Resource
+# TrueWatch Custom Region Resource
 
 ## 核心功能
 
-Guance Custom Region 资源用于在 Guance Cloud 中创建和管理自定义拨测节点。自定义拨测节点是用户自行部署的拨测执行点，可以在特定的网络环境中执行拨测任务。
+TrueWatch Custom Region 资源用于在 TrueWatch Cloud 中创建和管理自定义拨测节点。自定义拨测节点是用户自行部署的拨测执行点，可以在特定的网络环境中执行拨测任务。
 
 ## 适用场景
 
@@ -30,7 +30,7 @@ Guance Custom Region 资源用于在 Guance Cloud 中创建和管理自定义拨
 ### 创建资源
 
 ```hcl
-resource "guance_custom_region" "example" {
+resource "truewatch_custom_region" "example" {
   internal = false
   isp      = "telecom"
   country  = "Afghanistan"
@@ -43,7 +43,7 @@ resource "guance_custom_region" "example" {
 API 调用示例：
 
 ```shell
-curl 'https://openapi.guance.com/api/v1/dialing_region/regist' \
+curl 'https://openapi.truewatch.com/api/v1/dialing_region/regist' \
 -H 'DF-API-KEY: <DF-API-KEY>' \
 -H 'Content-Type: application/json;charset=UTF-8' \
 --data-raw '{"internal":false,"isp":"telecom","country":"Afghanistan","city":"Shahrak","keycode":"Afghanistan-Shahrak-telecom","name":"test"}' \
@@ -59,13 +59,13 @@ curl 'https://openapi.guance.com/api/v1/dialing_region/regist' \
 执行以下命令删除资源：
 
 ```bash
-terraform destroy -target=guance_custom_region.example
+terraform destroy -target=truewatch_custom_region.example
 ```
 
 API 调用示例：
 
 ```shell
-curl 'https://openapi.guance.com/api/v1/dialing_region/<region_uuid>/delete' \
+curl 'https://openapi.truewatch.com/api/v1/dialing_region/<region_uuid>/delete' \
 -H 'DF-API-KEY: <DF-API-KEY>' \
 --compressed
 ```
@@ -83,8 +83,8 @@ curl 'https://openapi.guance.com/api/v1/dialing_region/<region_uuid>/delete' \
    - 解决方案：检查必填参数是否填写正确，keycode 是否重复
 
 3. **网络问题**
-   - 问题：无法连接到 Guance Cloud API
-   - 解决方案：检查网络连接，确保能够访问 Guance Cloud API 端点
+   - 问题：无法连接到 TrueWatch Cloud API
+   - 解决方案：检查网络连接，确保能够访问 TrueWatch Cloud API 端点
 
 ### 资源删除失败
 
@@ -101,7 +101,7 @@ curl 'https://openapi.guance.com/api/v1/dialing_region/<region_uuid>/delete' \
 ### 基本示例
 
 ```hcl
-resource "guance_custom_region" "basic" {
+resource "truewatch_custom_region" "basic" {
   internal = true
   isp      = "telecom"
   country  = "China"
@@ -115,7 +115,7 @@ resource "guance_custom_region" "basic" {
 ### 海外节点示例
 
 ```hcl
-resource "guance_custom_region" "overseas" {
+resource "truewatch_custom_region" "overseas" {
   internal = false
   isp      = "aws"
   country  = "United States"

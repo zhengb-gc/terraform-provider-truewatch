@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/provider"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/provider"
 )
 
 func TestAccMember(t *testing.T) {
@@ -15,7 +15,7 @@ func TestAccMember(t *testing.T) {
 			// Create and Read testing
 			{
 				Config: provider.Config + `
-resource "guance_member" "demo" {
+resource "truewatch_member" "demo" {
 	name        = "oac-demo"
 }
 `,
@@ -25,7 +25,7 @@ resource "guance_member" "demo" {
 			// Create and Read testing
 			{
 				Config: provider.Config + `
-resource "guance_member" "demo" {
+resource "truewatch_member" "demo" {
   name = "oac-demo-complete"
 }
 `,

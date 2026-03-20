@@ -1,11 +1,11 @@
 # Monitor Json Resource
 
-The `guance_monitor_json` resource manages monitors in Guance Cloud using JSON import/export functionality. This resource allows you to import and export monitor configurations using the checker JSON format.
+The `truewatch_monitor_json` resource manages monitors in TrueWatch Cloud using JSON import/export functionality. This resource allows you to import and export monitor configurations using the checker JSON format.
 
 ## Example Usage
 
 ```hcl
-resource "guance_monitor_json" "example" {
+resource "truewatch_monitor_json" "example" {
   checker_json = jsonencode({
     extend = {
       funcName = ""
@@ -115,7 +115,7 @@ resource "guance_monitor_json" "example" {
 You can import a monitor json resource using its UUID:
 
 ```sh
-terraform import guance_monitor_json.example <uuid>
+terraform import truewatch_monitor_json.example <uuid>
 ```
 
 ## Notes
@@ -123,5 +123,5 @@ terraform import guance_monitor_json.example <uuid>
 - The `checker_json` field accepts a single JSON object of monitor configuration (not an array).
 - The `checker_json_export` field contains the actual monitor configurations after import, including the generated UUIDs.
 - When updating the resource, the Replace API is used to update the existing monitor.
-- The import operation uses the Guance Cloud checker import API endpoints.
-- You can export monitors from Guance Cloud and use the exported JSON as the `checker_json` input.
+- The import operation uses the TrueWatch Cloud checker import API endpoints.
+- You can export monitors from TrueWatch Cloud and use the exported JSON as the `checker_json` input.

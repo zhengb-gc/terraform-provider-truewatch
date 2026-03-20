@@ -24,7 +24,7 @@ func TestTerraformExample(t *testing.T) {
 	// get env vars
 	envVars := map[string]string{"TF_LOG_PROVIDER": "WARN"}
 	for _, envVar := range []string{
-		"GUANCE_ACCESS_TOKEN",
+		"TRUEWATCH_ACCESS_TOKEN",
 	} {
 		if os.Getenv(envVar) == "" {
 			t.Fatalf("Environment variable %s must be set for acceptance tests", envVar)

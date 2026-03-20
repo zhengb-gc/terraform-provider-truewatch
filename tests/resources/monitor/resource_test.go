@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/provider"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/provider"
 )
 
 func TestAccMonitor(t *testing.T) {
@@ -19,7 +19,7 @@ variable "email" {
   type = string
 }
 
-data "guance_members" "demo" {
+data "truewatch_members" "demo" {
   filters = [
     {
       name   = "email"
@@ -28,12 +28,12 @@ data "guance_members" "demo" {
   ]
 }
 
-resource "guance_membergroup" "demo" {
+resource "truewatch_membergroup" "demo" {
   name       = "oac-demo"
-  member_ids = data.guance_members.demo.items[*].id
+  member_ids = data.truewatch_members.demo.items[*].id
 }
 
-resource "guance_alertpolicy" "demo" {
+resource "truewatch_alertpolicy" "demo" {
   name           = "oac-demo"
   silent_timeout = "1h"
 
@@ -52,16 +52,16 @@ resource "guance_alertpolicy" "demo" {
     {
       type         = "member_group"
       member_group = {
-        id = guance_membergroup.demo.id
+        id = truewatch_membergroup.demo.id
       }
     },
   ]
 }
 
-resource "guance_monitor" "demo" {
+resource "truewatch_monitor" "demo" {
   manifest     = file("${path.module}/monitor.json")
   alert_policy = {
-    id = guance_alertpolicy.demo.id
+    id = truewatch_alertpolicy.demo.id
   }
 }
 `,

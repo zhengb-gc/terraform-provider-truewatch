@@ -1,10 +1,10 @@
-# Guance Community hack GuideLines
+# TrueWatch Community hack GuideLines
 
 ## What is this?
 
 The hack directory contains scripts used to build, test, package, and release this project.
 
-Many Kubernetes projects use this pattern. We use it in Guance Cloud to ensure that all contributors use the same build and release process.
+Many Kubernetes projects use this pattern. We use it in TrueWatch Cloud to ensure that all contributors use the same build and release process.
 
 ## How to use it?
 

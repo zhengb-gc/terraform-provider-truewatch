@@ -1,4 +1,4 @@
-resource "guance_slo" "example" {
+resource "truewatch_slo" "example" {
   name             = "Example SLO"
   interval         = "5m"
   goal             = 99.9

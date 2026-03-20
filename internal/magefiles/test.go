@@ -14,7 +14,7 @@ type Test mg.Namespace
 
 // Acc run acceptance test for specified resource
 func (ns Test) Acc() error {
-	envKeys := []string{"GUANCE_ACCESS_TOKEN", "GUANCE_REGION"}
+	envKeys := []string{"TRUEWATCH_ACCESS_TOKEN", "TRUEWATCH_REGION"}
 	envVars := map[string]string{}
 	for _, k := range envKeys {
 		envVars[k] = os.Getenv(k)

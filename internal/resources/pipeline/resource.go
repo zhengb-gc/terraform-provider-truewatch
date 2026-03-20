@@ -11,8 +11,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-framework/types/basetypes"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/api"
-	"github.com/GuanceCloud/terraform-provider-guance/internal/consts"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/api"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/consts"
 )
 
 //go:embed README.md

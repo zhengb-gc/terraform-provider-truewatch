@@ -3,35 +3,35 @@ package api
 import (
 	"fmt"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/consts"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/consts"
 )
 
 // AlertPolicy represents the alert policy structure for API requests
 type AlertPolicy struct {
-	Name               string           `json:"name,omitempty"`
-	Desc               string           `json:"desc,omitempty"`
-	OpenPermissionSet  bool             `json:"openPermissionSet,omitempty"`
-	PermissionSet      []string         `json:"permissionSet,omitempty"`
-	CheckerUUIDs       []string         `json:"checkerUUIDs,omitempty"`
-	SecurityRuleUUIDs  []string         `json:"securityRuleUUIDs,omitempty"`
-	RuleTimezone       string           `json:"ruleTimezone,omitempty"`
-	AlertOpt           *AlertOpt        `json:"alertOpt,omitempty"`
+	Name              string    `json:"name,omitempty"`
+	Desc              string    `json:"desc,omitempty"`
+	OpenPermissionSet bool      `json:"openPermissionSet,omitempty"`
+	PermissionSet     []string  `json:"permissionSet,omitempty"`
+	CheckerUUIDs      []string  `json:"checkerUUIDs,omitempty"`
+	SecurityRuleUUIDs []string  `json:"securityRuleUUIDs,omitempty"`
+	RuleTimezone      string    `json:"ruleTimezone,omitempty"`
+	AlertOpt          *AlertOpt `json:"alertOpt,omitempty"`
 }
 
 // AlertPolicyContent represents the alert policy structure for API responses
 type AlertPolicyContent struct {
-	UUID               string           `json:"uuid,omitempty"`
-	Name               string           `json:"name,omitempty"`
-	Desc               string           `json:"desc,omitempty"`
-	OpenPermissionSet  bool             `json:"openPermissionSet,omitempty"`
-	PermissionSet      []string         `json:"permissionSet,omitempty"`
-	CheckerUUIDs       []string         `json:"checkerUUIDs,omitempty"`
-	SecurityRuleUUIDs  []string         `json:"securityRuleUUIDs,omitempty"`
-	RuleTimezone       string           `json:"ruleTimezone,omitempty"`
-	AlertOpt           *AlertOpt        `json:"alertOpt,omitempty"`
-	CreateAt           float64          `json:"createAt,omitempty"`
-	UpdateAt           float64          `json:"updateAt,omitempty"`
-	WorkspaceUUID      string           `json:"workspaceUUID,omitempty"`
+	UUID              string    `json:"uuid,omitempty"`
+	Name              string    `json:"name,omitempty"`
+	Desc              string    `json:"desc,omitempty"`
+	OpenPermissionSet bool      `json:"openPermissionSet,omitempty"`
+	PermissionSet     []string  `json:"permissionSet,omitempty"`
+	CheckerUUIDs      []string  `json:"checkerUUIDs,omitempty"`
+	SecurityRuleUUIDs []string  `json:"securityRuleUUIDs,omitempty"`
+	RuleTimezone      string    `json:"ruleTimezone,omitempty"`
+	AlertOpt          *AlertOpt `json:"alertOpt,omitempty"`
+	CreateAt          float64   `json:"createAt,omitempty"`
+	UpdateAt          float64   `json:"updateAt,omitempty"`
+	WorkspaceUUID     string    `json:"workspaceUUID,omitempty"`
 }
 
 // AlertOpt represents the alertOpt structure
@@ -58,24 +58,24 @@ type SilentTimeoutByStatus struct {
 
 // AlertTarget represents the alertTarget structure
 type AlertTarget struct {
-	Name             string      `json:"name,omitempty"`
-	Targets          []Target    `json:"targets,omitempty"`
-	Crontab          string      `json:"crontab,omitempty"`
-	CrontabDuration  int         `json:"crontabDuration,omitempty"`
-	CustomDateUUIDs  []string    `json:"customDateUUIDs,omitempty"`
-	CustomStartTime  string      `json:"customStartTime,omitempty"`
-	CustomDuration   int         `json:"customDuration,omitempty"`
-	AlertInfo        []AlertInfo `json:"alertInfo,omitempty"`
+	Name            string      `json:"name,omitempty"`
+	Targets         []Target    `json:"targets,omitempty"`
+	Crontab         string      `json:"crontab,omitempty"`
+	CrontabDuration int         `json:"crontabDuration,omitempty"`
+	CustomDateUUIDs []string    `json:"customDateUUIDs,omitempty"`
+	CustomStartTime string      `json:"customStartTime,omitempty"`
+	CustomDuration  int         `json:"customDuration,omitempty"`
+	AlertInfo       []AlertInfo `json:"alertInfo,omitempty"`
 }
 
 // Target represents the targets structure
 type Target struct {
-	To              []string          `json:"to,omitempty"`
-	Status          string            `json:"status,omitempty"`
-	DfSource        string            `json:"df_source,omitempty"`
-	UpgradeTargets  []UpgradeTarget   `json:"upgradeTargets,omitempty"`
-	Tags            map[string][]string `json:"tags,omitempty"`
-	FilterString    string            `json:"filterString,omitempty"`
+	To             []string            `json:"to,omitempty"`
+	Status         string              `json:"status,omitempty"`
+	DfSource       string              `json:"df_source,omitempty"`
+	UpgradeTargets []UpgradeTarget     `json:"upgradeTargets,omitempty"`
+	Tags           map[string][]string `json:"tags,omitempty"`
+	FilterString   string              `json:"filterString,omitempty"`
 }
 
 // UpgradeTarget represents the upgradeTargets structure
@@ -87,10 +87,10 @@ type UpgradeTarget struct {
 
 // AlertInfo represents the alertInfo structure
 type AlertInfo struct {
-	Name         string    `json:"name,omitempty"`
-	Targets      []Target  `json:"targets,omitempty"`
-	FilterString string    `json:"filterString,omitempty"`
-	MemberInfo   []string  `json:"memberInfo,omitempty"`
+	Name         string   `json:"name,omitempty"`
+	Targets      []Target `json:"targets,omitempty"`
+	FilterString string   `json:"filterString,omitempty"`
+	MemberInfo   []string `json:"memberInfo,omitempty"`
 }
 
 // AlertPolicyDeleteRequest represents the request body for deleting alert policies

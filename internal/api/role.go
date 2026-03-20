@@ -3,7 +3,7 @@ package api
 import (
 	"fmt"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/consts"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/consts"
 )
 
 type Role struct {

@@ -1,4 +1,4 @@
-resource "guance_dashboard" "example" {
+resource "truewatch_dashboard" "example" {
   name     = "TF-dashboard"
   desc     = "An example dashboard created with Terraform"
   is_public = 1
@@ -14,11 +14,11 @@ resource "guance_dashboard" "example" {
 }
 
 output "dashboard_uuid" {
-  value       = guance_dashboard.example.uuid
+  value       = truewatch_dashboard.example.uuid
   description = "The UUID of the created dashboard"
 }
 
 output "dashboard_name" {
-  value       = guance_dashboard.example.name
+  value       = truewatch_dashboard.example.name
   description = "The name of the created dashboard"
 }

@@ -1,11 +1,11 @@
 # Notify Object Resource
 
-This resource manages notify objects in Guance Cloud. Notify objects are used to define how alerts are delivered, such as through DingTalk, WeChat, email, etc.
+This resource manages notify objects in TrueWatch Cloud. Notify objects are used to define how alerts are delivered, such as through DingTalk, WeChat, email, etc.
 
 ## Example Usage
 
 ```hcl
-resource "guance_notify_object" "example" {
+resource "truewatch_notify_object" "example" {
   type = "dingTalkRobot"
   name = "Example DingTalk Robot"
   opt_set = jsonencode({
@@ -67,5 +67,5 @@ The following attributes are exported:
 Notify objects can be imported using their UUID:
 
 ```bash
-terraform import guance_notify_object.example <notify_object_uuid>
+terraform import truewatch_notify_object.example <notify_object_uuid>
 ```

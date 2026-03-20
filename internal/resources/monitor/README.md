@@ -1,11 +1,11 @@
 # Monitor Resource
 
-The `guance_monitor` resource manages monitors in Guance Cloud. Monitors are used to detect anomalies and trigger alerts based on defined rules and conditions.
+The `truewatch_monitor` resource manages monitors in TrueWatch Cloud. Monitors are used to detect anomalies and trigger alerts based on defined rules and conditions.
 
 ## Example Usage
 
 ```terraform
-resource "guance_monitor" "example" {
+resource "truewatch_monitor" "example" {
   type = "trigger"
   status = 0
   alert_policy_uuids = ["altpl_xxxx32"]

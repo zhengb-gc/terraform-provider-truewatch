@@ -1,11 +1,11 @@
 # SLO Resource
 
-The `guance_slo` resource allows you to manage SLO (Service Level Objective) resources in Guance Cloud.
+The `truewatch_slo` resource allows you to manage SLO (Service Level Objective) resources in TrueWatch Cloud.
 
 ## Example Usage
 
 ```hcl
-resource "guance_slo" "example" {
+resource "truewatch_slo" "example" {
   name             = "Example SLO"
   interval         = "5m"
   goal             = 99.9
@@ -66,7 +66,7 @@ The following API endpoints are used by this resource:
 SLOs can be imported using their UUID:
 
 ```bash
-terraform import guance_slo.example monitor_123456
+terraform import truewatch_slo.example monitor_123456
 ```
 
 ## Common Issues and Solutions

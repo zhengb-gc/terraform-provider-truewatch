@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 
-	"github.com/GuanceCloud/terraform-provider-guance/provider"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/provider"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 		// provider address is used in these tutorials in conjunction with a
 		// specific Terraform CLI configuration for manual development testing
 		// of this provider.
-		Address: "registry.terraform.io/GuanceCloud/guance",
+		Address: "registry.terraform.io/TrueWatchTech/truewatch",
 	})
 	if err != nil {
 		panic(err)

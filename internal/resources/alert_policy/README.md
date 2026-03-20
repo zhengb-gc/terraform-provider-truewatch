@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `guance_alert_policy` resource manages alert policies in Guance Cloud. Alert policies define how alerts are generated, aggregated, and delivered to notification targets.
+The `truewatch_alert_policy` resource manages alert policies in TrueWatch Cloud. Alert policies define how alerts are generated, aggregated, and delivered to notification targets.
 
 ## Core Functionality
 
@@ -49,7 +49,7 @@ The `guance_alert_policy` resource manages alert policies in Guance Cloud. Alert
 ### Basic Alert Policy
 
 ```hcl
-resource "guance_alert_policy" "example" {
+resource "truewatch_alert_policy" "example" {
   name          = "High CPU Alert"
   desc          = "Alert when CPU usage exceeds threshold"
   rule_timezone = "Asia/Shanghai"
@@ -70,7 +70,7 @@ resource "guance_alert_policy" "example" {
 ### Alert Policy with Escalation
 
 ```hcl
-resource "guance_alert_policy" "escalation_example" {
+resource "truewatch_alert_policy" "escalation_example" {
   name          = "Database Alert"
   desc          = "Alert on database connectivity issues"
   rule_timezone = "Asia/Shanghai"
@@ -162,14 +162,14 @@ curl 'https://openapi.example.com/api/v1/alert_policy/delete' \
 **Solution**:
 - Verify `alert_target` configuration
 - Check notification target UUIDs are correct
-- Ensure notification channels are properly configured in Guance Cloud
+- Ensure notification channels are properly configured in TrueWatch Cloud
 
 ## Importing Existing Alert Policies
 
 To import an existing alert policy into Terraform:
 
 ```bash
-terraform import guance_alert_policy.example altpl_xxx
+terraform import truewatch_alert_policy.example altpl_xxx
 ```
 
 Replace `altpl_xxx` with the actual UUID of the alert policy.

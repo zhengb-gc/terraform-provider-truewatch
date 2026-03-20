@@ -1,15 +1,15 @@
 # Dashboard Example
 
-This example demonstrates how to use the `guance_dashboard` resource to create and manage dashboards in Guance Cloud.
+This example demonstrates how to use the `truewatch_dashboard` resource to create and manage dashboards in TrueWatch Cloud.
 
 ## Requirements
 
 - Terraform 1.0+
-- Guance Cloud API key
+- TrueWatch Cloud API key
 
 ## Usage
 
-1. Configure your Guance Cloud API key in the `provider.tf` file.
+1. Configure your TrueWatch Cloud API key in the `provider.tf` file.
 2. Modify the `main.tf` file to customize your dashboard configuration.
 3. Run `terraform init` to initialize the provider.
 4. Run `terraform plan` to preview the changes.
@@ -19,7 +19,7 @@ This example demonstrates how to use the `guance_dashboard` resource to create a
 ## Example Configuration
 
 ```hcl
-resource "guance_dashboard" "example" {
+resource "truewatch_dashboard" "example" {
   name     = "example-dashboard"
   desc     = "An example dashboard created with Terraform"
   is_public = 0

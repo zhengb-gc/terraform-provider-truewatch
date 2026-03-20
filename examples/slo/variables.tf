@@ -1,5 +1,5 @@
 variable "region" {
-  description = "The region of Guance Cloud."
+  description = "The region of TrueWatch Cloud."
   type        = string
   default     = "hangzhou"
 }

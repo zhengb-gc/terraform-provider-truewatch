@@ -5,16 +5,16 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/resources/blacklist"
-	"github.com/GuanceCloud/terraform-provider-guance/internal/resources/dashboard"
-	"github.com/GuanceCloud/terraform-provider-guance/internal/resources/membergroup"
-	"github.com/GuanceCloud/terraform-provider-guance/internal/resources/monitor_json"
-	"github.com/GuanceCloud/terraform-provider-guance/internal/resources/pipeline"
-	"github.com/GuanceCloud/terraform-provider-guance/internal/resources/role"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/resources/blacklist"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/resources/dashboard"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/resources/membergroup"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/resources/monitor_json"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/resources/pipeline"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/resources/role"
 )
 
 // Resources defines the resources implemented in the provider.
-func (p *guanceProvider) Resources(_ context.Context) []func() resource.Resource {
+func (p *truewatchProvider) Resources(_ context.Context) []func() resource.Resource {
 	return []func() resource.Resource{
 		// alert_policy.NewAlertPolicyResource,
 		blacklist.NewBlackListResource,

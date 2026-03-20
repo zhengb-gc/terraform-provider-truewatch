@@ -1,4 +1,4 @@
-resource "guance_blacklist" "demo" {
+resource "truewatch_blacklist" "demo" {
   name = "blacklist-demo"
   type   = "logging"
   sources = ["mysql", "oracle"]

@@ -1,4 +1,4 @@
-resource "guance_monitor" "example" {
+resource "truewatch_monitor" "example" {
   type = "trigger"
   status = 0
   alert_policy_uuids = []

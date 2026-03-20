@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 
-	"github.com/GuanceCloud/terraform-provider-guance/internal/provider"
+	"github.com/TrueWatchTech/terraform-provider-truewatch/internal/provider"
 )
 
 func TestAccDashboard(t *testing.T) {
@@ -15,7 +15,7 @@ func TestAccDashboard(t *testing.T) {
 			// Create and Read testing
 			{
 				Config: provider.Config + `
-resource "guance_dashboard" "demo" {
+resource "truewatch_dashboard" "demo" {
   name     = "oac-demo"
   manifest = file("${path.module}/dashboard.json")
 }

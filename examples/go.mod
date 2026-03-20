@@ -1,4 +1,4 @@
-module github.com/GuanceCloud/terraform-provider-guance/examples
+module github.com/TrueWatchTech/terraform-provider-truewatch/examples
 
 go 1.19
 

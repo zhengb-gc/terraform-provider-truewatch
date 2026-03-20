@@ -1,6 +1,6 @@
 # Terraform Provider: TrueWatch
 
-The TrueWatch Provider provides resources to manage [TrueWatch Cloud](https://en.truewatch.com/) resources.
+The TrueWatch Provider provides resources to manage [TrueWatch Cloud](https://www.truewatch.com/) resources.
 
 ![cover](./cover.png)
 
@@ -16,6 +16,8 @@ The resource supports as follows:
 * [x] member group
 * [x] black list
 * [x] role
+* [x] dashboard
+* [x] monitor
 
 The data source supports as follows:
 
@@ -24,16 +26,11 @@ The data source supports as follows:
 
 The region supports as follows:
 
-* [x] hangzhou
-* [x] ningxia
-* [x] guangzhou
-* [x] vnet
-* [x] hongkong
 * [x] oregon
 * [x] frankfurt
 * [x] singapore
-
-If there are more resources you need, create an [issue](https://github.com/TrueWatchTech/terraform-provider-truewatch/issues) for free.
+* [x] southafrica
+* [x] jakarta
 
 ## Compatibility
 

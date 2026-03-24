@@ -2,8 +2,6 @@
 
 The TrueWatch Provider provides resources to manage [TrueWatch Cloud](https://www.truewatch.com/) resources.
 
-![cover](./cover.png)
-
 ## Documentation, questions, and discussions
 
 Official documentation on how to use this provider can be found on the [Terraform Registry](https://registry.terraform.io/providers/TrueWatchTech/truewatch/latest/docs).

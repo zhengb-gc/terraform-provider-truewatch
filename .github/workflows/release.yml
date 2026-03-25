@@ -10,11 +10,12 @@ on:
 
 # Releases need permissions to read and write the repository contents.
 # GitHub considers creating releases and uploading assets as writing contents.
-# Note: Organization restricts contents: write so we omit the permissions block globally.
+permissions:
+  contents: write
 
 jobs:
   goreleaser:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -35,6 +36,6 @@ jobs:
         with:
           args: release --clean
         env:
-          # Use GHCR_TOKEN to authorize goreleaser because the default token is read-only.
-          GITHUB_TOKEN: ${{ secrets.GHCR_TOKEN }}
+          # GitHub sets the GITHUB_TOKEN secret automatically.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}

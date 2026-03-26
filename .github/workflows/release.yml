@@ -4,10 +4,14 @@ name: Release
 # This GitHub action creates a release when a tag that matches the pattern
 # "v*" (e.g. v0.1.0) is created.
 on:
-  workflow_dispatch:
   push:
     tags:
       - "v*"
+
+# Releases need permissions to read and write the repository contents.
+# GitHub considers creating releases and uploading assets as writing contents.
+permissions:
+  contents: write
 
 jobs:
   goreleaser:
@@ -21,17 +25,10 @@ jobs:
         with:
           go-version-file: "go.mod"
           cache: true
-      - name: Import GPG key
-        env:
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          PASSPHRASE: ${{ secrets.PASSPHRASE }}
-        run: |
-          echo "${GPG_PRIVATE_KEY}" | gpg --batch --import
-          GPG_FINGERPRINT=$(gpg --list-secret-keys --with-colons 2>/dev/null | awk -F: '/^fpr:/ { print $10; exit }')
-          echo "GPG_FINGERPRINT=${GPG_FINGERPRINT}" >> "$GITHUB_ENV"
       - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v3
+        with:
+          args: release --clean
         env:
+          # GitHub sets the GITHUB_TOKEN secret automatically.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          go install github.com/goreleaser/goreleaser/v2@latest
-          goreleaser release --clean

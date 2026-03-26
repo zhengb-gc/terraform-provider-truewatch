@@ -24,7 +24,7 @@ This example demonstrates how to use the `truewatch_synthetics_test` resource to
 ```hcl
 resource "truewatch_synthetics_test" "http_test" {
   type    = "http"
-  regions = ["hangzhou", "shanghai"]
+  regions = ["singapore", "shanghai"]
   tags    = ["http", "production"]
 
   task {
@@ -59,7 +59,7 @@ resource "truewatch_synthetics_test" "http_test" {
 ```hcl
 resource "truewatch_synthetics_test" "tcp_test" {
   type    = "tcp"
-  regions = ["hangzhou", "shanghai"]
+  regions = ["singapore", "shanghai"]
   tags    = ["tcp", "production"]
 
   task {
@@ -83,7 +83,7 @@ resource "truewatch_synthetics_test" "tcp_test" {
 ```hcl
 resource "truewatch_synthetics_test" "websocket_test" {
   type    = "websocket"
-  regions = ["hangzhou", "shanghai"]
+  regions = ["singapore", "shanghai"]
   tags    = ["websocket", "production"]
 
   task {
@@ -105,7 +105,7 @@ resource "truewatch_synthetics_test" "websocket_test" {
 ```hcl
 resource "truewatch_synthetics_test" "icmp_test" {
   type    = "icmp"
-  regions = ["hangzhou", "shanghai"]
+  regions = ["singapore", "shanghai"]
   tags    = ["icmp", "production"]
 
   task {

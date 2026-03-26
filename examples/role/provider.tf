@@ -10,5 +10,5 @@ terraform {
 }
 
 provider "truewatch" {
-  region = "hangzhou"
+  region = "singapore"
 }

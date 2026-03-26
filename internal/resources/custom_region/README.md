@@ -106,7 +106,7 @@ resource "truewatch_custom_region" "basic" {
   isp      = "telecom"
   country  = "China"
   province = "Zhejiang"
-  city     = "Hangzhou"
+  city     = "singapore"
   name     = "Hangzhou Telecom"
   keycode  = "china-hangzhou-telecom"
 }

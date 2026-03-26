@@ -11,5 +11,5 @@ provider "truewatch" {
   # access_token = "your-api-key"
 
   # You can set your region here or use the TRUEWATCH_REGION environment variable
-  # region = "hangzhou"
+  # region = "singapore"
 }

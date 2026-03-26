@@ -19,7 +19,7 @@ description: |-
   required_providers {
       truewatch = {
         source = "TrueWatchTech/truewatch"
-        version = "=0.0.1"
+        version = "=0.0.2"
       }
     }
   }
@@ -27,7 +27,7 @@ description: |-
   // Such as TRUEWATCHACCESSTOKEN and TRUEWATCHREGION
   provider "truewatch" {
     # accesstoken = "your access token, recommend store in environment variable"
-    region = "hangzhou"
+    region = "singapore"
     # end_point = "https://openapi.truewatch.com"
   }
   ```
@@ -62,7 +62,7 @@ terraform {
   required_providers {
     truewatch = {
       source = "TrueWatchTech/truewatch"
-      version = "=0.0.1"
+      version = "=0.0.2"
     }
   }
 }
@@ -71,7 +71,7 @@ terraform {
 // Such as TRUEWATCH_ACCESS_TOKEN and TRUEWATCH_REGION
 provider "truewatch" {
   # access_token = "your access token, recommend store in environment variable"
-  region = "hangzhou"
+  region = "singapore"
   # end_point = "https://openapi.truewatch.com"
 }
 ```

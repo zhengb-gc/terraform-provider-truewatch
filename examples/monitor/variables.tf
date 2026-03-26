@@ -1,7 +1,7 @@
 variable "region" {
   description = "The region of TrueWatch Cloud."
   type        = string
-  default     = "hangzhou"
+  default     = "singapore"
 }
 variable "alert_policy_uuids" {
   description = "List of alert policy UUIDs."
